@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Django SQLite DB
+*.sqlite3
+
+# Environment
+.env
+.env.*
+
+# VS Code settings
+.vscode/
+
+# MacOS & Windows
+.DS_Store
+Thumbs.db
+
+# Migrations (optional - only if you don’t want to version them)
+# */migrations/
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# Logs
+*.log
+
+# Byte-compiled / cache
+*.bak
+*.swp
+*.tmp
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Static files (if generated)
+staticfiles/
+static_root/
+media_root/
+
+# Node (if used)
+node_modules/
+
+# Coverage / testing
+htmlcov/
+.coverage
+.tox/
+.nox/
+.cache/
+.pytest_cache/
+
+# IDEs
+.idea/
+*.iml
+
+# Gunicorn / uWSGI / other servers
+*.pid
