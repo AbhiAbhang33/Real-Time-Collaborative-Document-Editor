@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Document{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg border-0">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0">Create a New Document</h4>
+            </div>
+            <div class="card-body">
+                <form method="post" action="{% url 'create-document' %}" id="createDocumentForm">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Document Title</label>
+                        <input type="text" id="title" name="title" class="form-control" placeholder="Enter title..." required>
+                        <div class="invalid-feedback">
+                            Please enter a document title.
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'dashboard' %}" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Back
+                        </a>
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-plus-circle"></i> Create Document
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JS to enhance form validation -->
+<script>
+    document.getElementById('createDocumentForm').addEventListener('submit', function (e) {
+        const titleInput = document.getElementById('title');
+        if (!titleInput.value.trim()) {
+            titleInput.classList.add('is-invalid');
+            e.preventDefault();
+        } else {
+            titleInput.classList.remove('is-invalid');
+        }
+    });
+</script>
+
+<!-- Optional Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+{% endblock %}

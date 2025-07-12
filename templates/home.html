@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<style>
+    .welcome-container {
+        min-height: 75vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: fadeIn 0.8s ease-in-out;
+        text-align: center;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .welcome-heading {
+        font-size: 2.75rem;
+        font-weight: bold;
+    }
+
+    .welcome-subtext {
+        font-size: 1.25rem;
+        color: #6c757d;
+    }
+
+    .welcome-buttons a {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+</style>
+
+<div class="welcome-container">
+    <h1 class="welcome-heading mb-3">👋 Welcome to <span class="text-primary">CollabEditor</span></h1>
+    <p class="welcome-subtext mb-4">
+        Create, edit, and collaborate in real-time with <strong>AI-powered grammar suggestions</strong>.
+    </p>
+
+    <div class="welcome-buttons">
+        <a href="{% url 'login' %}" class="btn btn-lg btn-primary me-3 shadow-sm">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Login
+        </a>
+        <a href="{% url 'signup' %}" class="btn btn-lg btn-outline-secondary shadow-sm">
+            <i class="bi bi-person-plus me-1"></i> Sign Up
+        </a>
+    </div>
+</div>
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+{% endblock %}
